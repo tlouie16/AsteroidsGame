@@ -1,4 +1,6 @@
- Spaceship S= new Spaceship();
+Spaceship S= new Spaceship();
+ Asteroid[] Rock= new Asteroid[20];  
+ Stars[] Sky = new Stars[300];
 public void setup() 
 {
   
@@ -6,6 +8,10 @@ public void setup()
  for(int i = 0; i <Sky.length; i++)
     {
       Sky[i] = new Stars();  
+  }
+  for(int i = 0; i <Rock.length; i++)
+    {
+      Rock[i] = new Asteroid();  
   }
 }
 public void draw() 
@@ -15,9 +21,15 @@ public void draw()
     {
       Sky[i].show();
     }
+    for(int i = 0; i <Rock.length; i++)
+    {
+      Rock[i].show();  
+      Rock[i].move(); 
+  }
   S.show();
   S.move();  
 }
+
 public void keyPressed()
 {
   if(key == 'a')//turn left

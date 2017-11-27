@@ -1,4 +1,3 @@
-Stars[] Sky = new Stars[300];
 class Stars //note that this class does NOT extend Floater
 {
   private int myX,myY;
