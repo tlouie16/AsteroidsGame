@@ -1,5 +1,5 @@
-Spaceship S= new Spaceship();
- Asteroid[] Rock= new Asteroid[20];  
+ArrayList <Asteroid> space = new ArrayList<Asteroid>();
+ Spaceship S= new Spaceship();
  Stars[] Sky = new Stars[300];
 public void setup() 
 {
@@ -9,9 +9,9 @@ public void setup()
     {
       Sky[i] = new Stars();  
   }
-  for(int i = 0; i <Rock.length; i++)
+  for(int bi = 0; bi <20; bi++)
     {
-      Rock[i] = new Asteroid();  
+      space.add(new Asteroid());  
   }
 }
 public void draw() 
@@ -21,13 +21,18 @@ public void draw()
     {
       Sky[i].show();
     }
-    for(int i = 0; i <Rock.length; i++)
+    for(int bi = 0; bi <space.size(); bi++)
     {
-      Rock[i].show();  
-      Rock[i].move(); 
+      space.get(bi).show();
+      space.get(bi).move();
   }
   S.show();
   S.move();  
+  for(int b=0; b<space.size(); b++)
+  {
+    if(dist(S.getX(),S.getY(),space.get(b).getX(),space.get(b).getY())<10)
+    space.remove(b);
+  }
 }
 
 public void keyPressed()
