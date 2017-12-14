@@ -16,7 +16,7 @@ class Spaceship extends Floater
    corners=11;
    xCorners=new int[corners];
    yCorners=new int[corners];
-   myColor=255;
+   myColor= color(84,187,255);
    xCorners[0]=19;
 yCorners[0]=0;
 xCorners[1]=-6;
@@ -39,8 +39,8 @@ xCorners[9]=-6;
 yCorners[9]=9;
 xCorners[10]=-6;
 yCorners[10]=14;
-   myCenterX=150;
-   myCenterY=150;
+   myCenterX=250;
+   myCenterY=250;
    myDirectionX=0;
    myDirectionY=0;
     }
